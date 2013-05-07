@@ -1,0 +1,15 @@
+{
+    "name": "guidance/lscachebuster",
+    "type": "magento-module",
+    "license":"Apache-2.0",
+    "description":"A module to allow the Guidance Cachebuster and Tinybrick Lightspeed modules to work together.",
+    "authors":[
+        {
+            "name":"Gordon Knoppe",
+            "email":"gordon@knoppe.net"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
