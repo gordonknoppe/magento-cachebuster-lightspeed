@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Module to allow Cachebuster and Lightspeed modules to work together
+ *
+ * @author     Guidance Magento Team <magento@guidance.com>
+ * @category   Guidance
+ * @package    Lscachebuster
+ * @copyright  Copyright (c) 2013 Guidance Solutions (http://www.guidance.com)
+ * @license    http://www.apache.org/licenses/LICENSE-2.0  Apache License 2.0
+ */
+ -->
+<config>
+    <modules>
+        <Guidance_Lscachebuster>
+            <version>0.1.0</version>
+        </Guidance_Lscachebuster>
+    </modules>
+    <global>
+        <helpers>
+            <guidance_lscachebuster>
+                <class>Guidance_Lscachebuster_Helper</class>
+            </guidance_lscachebuster>
+        </helpers>
+        <blocks>
+            <guidance_lscachebuster>
+                <class>Guidance_Lscachebuster_Block</class>
+            </guidance_lscachebuster>
+            <page>
+                <rewrite>
+                    <html>Guidance_Lscachebuster_Block_Page_Html</html>
+                </rewrite>
+            </page>
+        </blocks>
+    </global>
+    <frontend>
+        <events>
+            <controller_action_postdispatch>
+                <observers>
+                    <guidance_cachebuster>
+                        <type>disabled</type>
+                        <class>guidance_cachebuster/observer</class>
+                        <method></method>
+                    </guidance_cachebuster>
+                </observers>
+            </controller_action_postdispatch>
+        </events>
+    </frontend>
+</config>
